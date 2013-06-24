@@ -27,7 +27,7 @@ python_compile_all() {
 }
 
 python_test() {
-	cd test
+	cd test || die
 	${PYTHON} manage.py test django_auth_ldap
 	echo "$@"
 	"$@" || die "Tests failed with ${EPYTHON}"
