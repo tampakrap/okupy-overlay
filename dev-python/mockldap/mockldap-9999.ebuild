@@ -12,20 +12,20 @@ HOMEPAGE="http://bitbucket.org/psagers/mockldap/"
 EHG_REPO_URI="https://bitbucket.org/psagers/mockldap/"
 
 KEYWORDS=""
-IUSE="+passlib"
+IUSE="crypt"
 
 LICENSE="BSD"
 SLOT="0"
 
-DEPEND="dev-python/python-ldap[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}
-	passlib? ( dev-python/passlib[${PYTHON_USEDEP}] )"
+DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]"
+RDEPEND=">=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]
+	crypt? ( dev-python/passlib[${PYTHON_USEDEP}] )"
 
 S="${WORKDIR}/${PN}"
 
 python_test() {
 	cd "src/mockldap/ldap" || die
-	${PYTHON} -m unittest tests
-	echo "$@"
-	"$@" || die "Tests failed with ${EPYTHON}"
+	set -- ${PYTHON} -m unittest tests
+	echo "${@}"
+	"${@}" || die "Tests failed with ${EPYTHON}"
 }
