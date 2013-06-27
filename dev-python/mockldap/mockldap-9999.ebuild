@@ -24,8 +24,7 @@ RDEPEND=">=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]
 S="${WORKDIR}/${PN}"
 
 python_test() {
-	cd "src/mockldap/ldap" || die
-	set -- ${PYTHON} -m unittest tests
+	set -- "${PYTHON}" setup.py test
 	echo "${@}"
 	"${@}" || die "Tests failed with ${EPYTHON}"
 }
