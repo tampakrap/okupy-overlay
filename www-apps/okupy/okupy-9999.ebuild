@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/django-1.5[${PYTHON_USEDEP},mysql?,postgres?,sqlite?]
 	~dev-python/django-auth-ldap-1.1.4.0.1[${PYTHON_USEDEP}]
 	>=dev-python/django-compressor-1.3[${PYTHON_USEDEP}]
-	>=dev-python/edpwd-0.0.6[${PYTHON_USEDEP}]
+	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
 	>=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]"
 
@@ -49,15 +49,15 @@ src_install() {
 
 	local settings_dir="${PYTHON_SITEDIR}/${PN}/settings"
 
-	# copy local_settings.py.sample to local_settings.py
+	# copy local.py.sample to local.py
 	insinto ${settings_dir}
-	newins ${ED}${settings_dir}/local_settings.py.sample local_settings.py
+	newins ${ED}${settings_dir}/local.py.sample local.py
 	# remove useless sample files
 	rm ${ED}${settings_dir}/*.sample || die
-	# create bytecode files for the newly created local_settings.py
+	# create bytecode files for the newly created local.py
 	python_optimize ${ED}${settings_dir}
-	# symlink to /etc/okupy.py for convenience
-	dosym ${settings_dir}/local_settings.py /etc/okupy.py
+	# symlink to /etc/okupy.conf for convenience
+	dosym ${settings_dir}/local.py /etc/okupy.conf
 
 	webapp_src_install
 }
