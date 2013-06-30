@@ -28,7 +28,8 @@ RDEPEND="${DEPEND}
 	>=dev-python/django-compressor-1.3[${PYTHON_USEDEP}]
 	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
-	>=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]"
+	>=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]
+	>=dev-python/python-openid-2.2.5[${PYTHON_USEDEP}]"
 
 REQUIRED_USE="|| ( mysql postgres sqlite )
 	test? ( sqlite )"
