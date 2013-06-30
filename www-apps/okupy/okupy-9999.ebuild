@@ -24,7 +24,7 @@ DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]
 	)"
 RDEPEND="${DEPEND}
 	>=dev-python/django-1.5[${PYTHON_USEDEP},mysql?,postgres?,sqlite?]
-	~dev-python/django-auth-ldap-1.1.4.0.1[${PYTHON_USEDEP}]
+	>=dev-python/django-auth-ldap-1.1.4[${PYTHON_USEDEP}]
 	>=dev-python/django-compressor-1.3[${PYTHON_USEDEP}]
 	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
