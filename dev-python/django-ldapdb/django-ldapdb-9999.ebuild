@@ -12,11 +12,11 @@ EGIT_BRANCH=okupy
 inherit distutils-r1 git-2
 
 DESCRIPTION="An LDAP database backend for Django"
-HOMEPAGE="http://opensource.bolloretelecom.eu/projects/django-ldapdb/"
+HOMEPAGE="https://github.com/tampakrap/django-ldapdb/"
 SRC_URI=""
 
 KEYWORDS=""
-IUSE="examples test"
+IUSE="examples"
 LICENSE="MIT"
 SLOT="0"
 
