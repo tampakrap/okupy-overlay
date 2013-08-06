@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 	=dev-python/django-ldapdb-9999[${PYTHON_USEDEP}]
 	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-0.13[${PYTHON_USEDEP}]
 	>=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]
 	>=dev-python/python-openid-2.2.5[${PYTHON_USEDEP}]"
 
