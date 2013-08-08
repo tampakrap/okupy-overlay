@@ -26,5 +26,7 @@ RDEPEND="dev-python/django[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]"
 
-# Tests require LDAP setup.
-RESTRICT=test
+python_test() {
+	# 'examples' tests are still work-in-progress
+	python manage.py test ldapdb || die "Tests fail with ${EPYTHON}"
+}
