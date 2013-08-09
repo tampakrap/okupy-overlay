@@ -26,12 +26,15 @@ RDEPEND="${DEPEND}
 	>=dev-python/django-1.5[${PYTHON_USEDEP},mysql?,postgres?,sqlite?]
 	>=dev-python/django-auth-ldap-1.1.4[${PYTHON_USEDEP}]
 	>=dev-python/django-compressor-1.3[${PYTHON_USEDEP}]
-	=dev-python/django-ldapdb-9999[${PYTHON_USEDEP}]
+	>=dev-python/django-ldapdb-9999[${PYTHON_USEDEP}]
+	>=dev-python/django-otp-9999[${PYTHON_USEDEP}]
 	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-0.13[${PYTHON_USEDEP}]
+	>=dev-python/pyopenssl-0.13[${PYTHON_USEDEP}]
 	>=dev-python/python-ldap-2.4.10[${PYTHON_USEDEP}]
-	>=dev-python/python-openid-2.2.5[${PYTHON_USEDEP}]"
+	>=dev-python/python-openid-2.2.5[${PYTHON_USEDEP}]
+	>=dev-python/qrcode-3.0[${PYTHON_USEDEP}]"
 
 REQUIRED_USE="|| ( mysql postgres sqlite )
 	test? ( sqlite )"
