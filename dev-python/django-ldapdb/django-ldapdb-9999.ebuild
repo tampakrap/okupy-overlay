@@ -24,7 +24,8 @@ S="${WORKDIR}/${PN}"
 
 RDEPEND="dev-python/django[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]"
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	test? ( dev-python/mockldap[${PYTHON_USEDEP}] )"
 
 python_test() {
 	# 'examples' tests are still work-in-progress
