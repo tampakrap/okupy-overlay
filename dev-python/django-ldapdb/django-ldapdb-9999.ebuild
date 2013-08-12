@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/tampakrap/django-ldapdb/"
 SRC_URI=""
 
 KEYWORDS=""
-IUSE="examples"
+IUSE="examples test"
 LICENSE="MIT"
 SLOT="0"
 
