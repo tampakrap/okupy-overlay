@@ -19,6 +19,7 @@ SLOT="0"
 
 DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]
 	test? (
+		>=dev-python/django-discover-runner-1.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
 		=dev-python/mockldap-9999[${PYTHON_USEDEP}]
 	)"
