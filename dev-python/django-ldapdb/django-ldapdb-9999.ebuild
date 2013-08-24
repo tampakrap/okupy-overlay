@@ -28,6 +28,5 @@ DEPEND="${RDEPEND}
 	test? ( dev-python/mockldap[${PYTHON_USEDEP}] )"
 
 python_test() {
-	# 'examples' tests are still work-in-progress
-	python manage.py test ldapdb || die "Tests fail with ${EPYTHON}"
+	"${PYTHON}" manage.py test examples ldapdb || die "Tests fail with ${EPYTHON}"
 }
