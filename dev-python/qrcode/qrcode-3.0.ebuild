@@ -18,3 +18,9 @@ IUSE=""
 
 RDEPEND="dev-python/six[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}"
+
+python_test() {
+	set -- "${PYTHON}" -m unittest qrcode.tests
+	echo "$@"
+	"$@" || die "Tests failed with ${EPYTHON}"
+}
