@@ -30,6 +30,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/django-ldapdb-9999[${PYTHON_USEDEP}]
 	>=dev-python/django-otp-9999[${PYTHON_USEDEP}]
 	>=dev-python/edpwd-0.0.7[${PYTHON_USEDEP}]
+	>=dev-python/paramiko-1.10.1[${PYTHON_USEDEP}]
 	>=dev-python/passlib-1.6.1[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-0.13[${PYTHON_USEDEP}]
 	>=dev-python/pyopenssl-0.13[${PYTHON_USEDEP}]
