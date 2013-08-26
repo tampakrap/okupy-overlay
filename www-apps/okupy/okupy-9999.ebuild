@@ -44,7 +44,7 @@ REQUIRED_USE="|| ( mysql postgres sqlite )
 WEBAPP_MANUAL_SLOT="yes"
 
 python_test() {
-	set -- ${PYTHON} manage.py test --settings=okupy.tests.settings tests
+	set -- ${PYTHON} setup.py test
 	echo "$@"
 	"$@" || die "Tests failed with ${EPYTHON}"
 }
