@@ -19,6 +19,7 @@ SLOT="0"
 
 DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]"
 RDEPEND="dev-python/python-ldap[${PYTHON_USEDEP}]
+	dev-python/funcparserlib[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	crypt? ( dev-python/passlib[${PYTHON_USEDEP}] )
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
