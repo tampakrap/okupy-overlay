@@ -66,6 +66,9 @@ src_install() {
 	python_optimize ${ED}${settings_dir}
 	# symlink to /etc/okupy.conf for convenience
 	dosym ${settings_dir}/local.py /etc/okupy.conf
+	# replace vars
+	sed -i -e 's/DEVELOPMENT = True/DEVELOPMENT = False/g' ${ED}${settings_dir}/local.py
+	sed -i -e "s/'okupy-dev'/'okupy'/g" ${ED}${settings_dir}/local.py
 
 	webapp_src_install
 }
