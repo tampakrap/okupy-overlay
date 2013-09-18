@@ -13,7 +13,7 @@ HOMEPAGE="http://github.com/gentoo/identity.gentoo.org"
 EGIT_REPO_URI="git://github.com/gentoo/identity.gentoo.org"
 
 KEYWORDS=""
-IUSE="mysql postgres sqlite test"
+IUSE="doc mysql postgres sqlite test"
 LICENSE="AGPL-3"
 SLOT="0"
 
@@ -22,7 +22,9 @@ DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]
 		>=dev-python/django-discover-runner-1.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
 		>=dev-python/mockldap-0.1[${PYTHON_USEDEP}]
-	)"
+		)
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
+
 RDEPEND="${DEPEND}
 	>=dev-python/django-1.5[${PYTHON_USEDEP},mysql?,postgres?,sqlite?]
 	>=dev-python/django-auth-ldap-1.1.4[${PYTHON_USEDEP}]
@@ -71,6 +73,15 @@ src_install() {
 	sed -i -e "s/'okupy-dev'/'okupy'/g" ${ED}${settings_dir}/local.py
 
 	webapp_src_install
+}
+
+python_compile_all() {
+	use doc && emake -C docs html
+}
+
+python_install_all() {
+	use doc && local HTML_DOCS=( docs/_build/html/. )
+	distutils-r1_python_install_all
 }
 
 pkg_postinst() {
