@@ -18,12 +18,12 @@ LICENSE="AGPL-3"
 SLOT="0"
 
 DEPEND=">=dev-python/setuptools-0.6.30[${PYTHON_USEDEP}]
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
 		>=dev-python/django-discover-runner-1.0[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
 		>=dev-python/mockldap-0.1[${PYTHON_USEDEP}]
-		)
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
+	)"
 
 RDEPEND="${DEPEND}
 	>=dev-python/django-1.5[${PYTHON_USEDEP},mysql?,postgres?,sqlite?]
