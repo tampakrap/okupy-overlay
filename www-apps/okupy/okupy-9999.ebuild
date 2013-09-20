@@ -46,9 +46,7 @@ REQUIRED_USE="|| ( mysql postgres sqlite )
 WEBAPP_MANUAL_SLOT="yes"
 
 python_test() {
-	set -- ${PYTHON} setup.py test
-	echo "$@"
-	"$@" || die "Tests failed with ${EPYTHON}"
+	esetup.py test
 }
 
 src_install() {
