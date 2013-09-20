@@ -6,13 +6,13 @@ EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 
-EGIT_REPO_URI="https://github.com/tampakrap/django-ldapdb.git"
-EGIT_BRANCH=okupy
+EGIT_REPO_URI="https://github.com/gentoo/django-ldapdb.git"
+EGIT_BRANCH=okupy_v2
 
 inherit distutils-r1 git-2
 
 DESCRIPTION="An LDAP database backend for Django"
-HOMEPAGE="https://github.com/tampakrap/django-ldapdb/"
+HOMEPAGE="https://github.com/jlaine/django-ldapdb/"
 SRC_URI=""
 
 KEYWORDS=""
@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 	test? ( dev-python/mockldap[${PYTHON_USEDEP}] )"
 
 python_test() {
-	set -- "${PYTHON}" manage.py test examples ldapdb
+	set -- "${PYTHON}" setup.py test
 	echo "$@"
 	"$@" || die "Tests failed with ${EPYTHON}"
 }
