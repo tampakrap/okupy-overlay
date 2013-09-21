@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+PYTHON_COMPAT=( python{2_6,2_7} )
 
 inherit mercurial distutils-r1
 
@@ -21,7 +21,8 @@ RDEPEND="dev-python/funcparserlib[${PYTHON_USEDEP}]
 	dev-python/python-ldap[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	test? ( dev-python/passlib[${PYTHON_USEDEP}] )"
 
 S="${WORKDIR}/${PN}"
 
