@@ -12,7 +12,7 @@ EGIT_BRANCH=okupy_v2
 inherit distutils-r1 git-2
 
 DESCRIPTION="An LDAP database backend for Django"
-HOMEPAGE="https://github.com/jlaine/django-ldapdb/"
+HOMEPAGE="https://github.com/jlaine/django-ldapdb"
 SRC_URI=""
 
 KEYWORDS=""
@@ -22,11 +22,17 @@ SLOT="0"
 
 S="${WORKDIR}/${PN}"
 
-RDEPEND="dev-python/django[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/django[${PYTHON_USEDEP}]
+	dev-python/python-ldap[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? ( dev-python/mockldap[${PYTHON_USEDEP}] )"
 
 python_test() {
 	esetup.py test
+}
+
+python_install_all() {
+	use examples && local EXAMPLES=( examples/. )
+	distutils-r1_python_install_all
 }
